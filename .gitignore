@@ -1,6 +1,6 @@
 node_modules
-package-lock.json
 api.http
+package-lock.json
+.vscode
 .env
 biome.json
-.vscode
