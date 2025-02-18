@@ -3,4 +3,4 @@ package-lock.json
 api.http
 .env
 biome.json
-.vscode
+.vscode/*
