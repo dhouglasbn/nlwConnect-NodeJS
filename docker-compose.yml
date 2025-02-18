@@ -1,0 +1,21 @@
+services:
+  service-pg:
+    image: bitnami/postgresql # imagem do banco de dados postgres
+    ports:
+      - '5432:5432' # Postgres roda na porta 5432 na minha máquina
+      # Se houver outra instalação do postgres isso dá problema -> altere a primeira porta
+    environment:
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=connect
+
+  service-redis:
+    image: bitnami/redis # imagem do banco de dados redis
+    ports:
+      - '6379:6379' # Apontamento de porta
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes # Em ambiente dev não é necessário senha
+      # Em produção USE senha!!!!
+
+      # Rodar no terminal:
+      # docker compose up -d
