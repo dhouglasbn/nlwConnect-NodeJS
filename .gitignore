@@ -5,3 +5,4 @@ package-lock.json
 .env
 biome.json
 src/drizzle/migrations
+dist
