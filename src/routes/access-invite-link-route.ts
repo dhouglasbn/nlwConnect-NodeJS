@@ -17,9 +17,7 @@ export const accessInviteLinkRoute: FastifyPluginAsyncZod = async app => {
         }),
         response: {
           // Especificando a validação do zod do corpo da resposta
-          201: z.object({
-            subscriberId: z.string(),
-          }),
+          302: z.null(),
         },
       },
     },

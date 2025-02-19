@@ -4,7 +4,7 @@ interface AccessInviteLinkParams {
   subscriberId: string
 }
 
-// service de inscrição do evento
+// service do link de convites do evento
 export async function accessInviteLink({
   subscriberId,
 }: AccessInviteLinkParams) {
