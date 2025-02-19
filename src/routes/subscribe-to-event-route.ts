@@ -15,6 +15,8 @@ export const subscribeToEventRoute: FastifyPluginAsyncZod = async app => {
           // Especificando a validação do zod do corpo da requisição
           name: z.string(),
           email: z.string().email(),
+          // nullish usuário pode informar, não informar ou informar null
+          referrer: z.string().nullish(),
         }),
         response: {
           // Especificando a validação do zod do corpo da resposta
@@ -25,11 +27,12 @@ export const subscribeToEventRoute: FastifyPluginAsyncZod = async app => {
       },
     },
     async (request, reply) => {
-      const { name, email } = request.body
+      const { name, email, referrer } = request.body
 
       const { subscriberId } = await subscribeToEvent({
         name,
         email,
+        referrerId: referrer,
       })
 
       return reply.status(201).send({
