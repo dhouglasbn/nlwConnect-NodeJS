@@ -19,3 +19,4 @@ services:
 
       # Rodar no terminal:
       # docker compose up -d
+      # docker logs <CONTAINER ID>
