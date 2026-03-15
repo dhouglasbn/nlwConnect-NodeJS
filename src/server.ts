@@ -52,6 +52,7 @@ app.register(getSubscriberInvitesCountRoute)
 app.register(getSubscriberRankingPositionRoute)
 app.register(getRankingRoute)
 app.register(sendMessageRoute)
+app.get('/health', (_req,_res) => 'OK')
 
 app.listen({
   port: env.PORT,
