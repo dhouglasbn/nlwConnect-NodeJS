@@ -1,9 +1,11 @@
 import type { Config } from 'drizzle-kit'
 import { env } from './src/env'
 
+const isProd = env.NODE_ENV === 'production'
+
 export default {
-  schema: './src/drizzle/schema/*', // tables directory
-  out: './src/drizzle/migrations', // table generation files
+  schema: isProd ? './dist/drizzle/schema/*' : './src/drizzle/schema/*',
+  out: isProd ? './dist/drizzle/migrations' : './src/drizzle/migrations',
   dialect: 'postgresql', // our database
   dbCredentials: {
     url: env.POSTGRES_URL,

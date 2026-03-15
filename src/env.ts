@@ -6,6 +6,7 @@ const envSchema = z.object({
   REDIS_URL: z.string().url(),
   WEB_URL: z.string().url(),
   GOOGLE_GENERATIVE_AI_API_KEY: z.string(),
+  NODE_ENV: z.string(),
 })
 
 export const env = envSchema.parse(process.env)
