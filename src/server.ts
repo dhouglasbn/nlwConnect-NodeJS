@@ -54,5 +54,5 @@ app.register(getRankingRoute)
 app.register(sendMessageRoute)
 
 app.listen({ port: env.PORT }).then(() => {
-  console.log('HTTP server running!')
+  console.log(`HTTP server running on PORT ${env.PORT}!`)
 })
